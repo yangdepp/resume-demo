@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>自适应</title>
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+      text-align: center;
+    }
+
+    .head,
+    .foot {
+      height: 80px;
+      line-height: 80px;
+      background-color: #393842;
+      color: #fff;
+      font-size: 50px;
+      font-weight: bolder;
+    }
+
+    .foot {
+      font-size: 14px;
+      color: aliceblue;
+    }
+
+    .main {
+      background-color: #ccc;
+      color: #fff;
+      flex-grow: 1;
+      border-left: 1px solid #000;
+      align-items: center;
+    }
+
+    body {
+      display: flex;
+      flex-flow: column;
+    }
+
+    .body {
+      display: flex;
+      flex: 1;
+      width: 1200px;
+      align-self: center;
+    }
+
+    .side {
+      width: 200px;
+      background-color: #CFCFCF;
+      align-items: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="head">老师好</div>
+  <div class="body">
+    <div class="side"></div>
+    <div class="main"></div>
+  </div>
+  <div class="foot">这里是底线</div>
+  <script>
+    console.log('hello jirengu')
+  </script>
+</body>
+
+</html>
