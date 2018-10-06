@@ -1,74 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>自适应</title>
-  <style>
-    html,
-    body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      width: 100%;
-      text-align: center;
-    }
-
-    .head,
-    .foot {
-      height: 80px;
-      line-height: 80px;
-      background-color: #393842;
-      color: #fff;
-      font-size: 50px;
-      font-weight: bolder;
-    }
-
-    .foot {
-      font-size: 14px;
-      color: aliceblue;
-    }
-
-    .main {
-      background-color: #ccc;
-      color: #fff;
-      flex-grow: 1;
-      border-left: 1px solid #000;
-      align-items: center;
-    }
-
-    body {
-      display: flex;
-      flex-flow: column;
-    }
-
-    .body {
-      display: flex;
-      flex: 1;
-      width: 1200px;
-      align-self: center;
-    }
-
-    .side {
-      width: 200px;
-      background-color: #CFCFCF;
-      align-items: center;
-    }
-  </style>
+  <title>我的个人简历</title>
+  <link rel="stylesheet" href="./main.css">
 </head>
 
 <body>
-  <div class="head">老师好</div>
-  <div class="body">
-    <div class="side"></div>
-    <div class="main"></div>
+  <div id="topNavBar" class="topNavBar">
+    <div class="topNavBar-inner clearfix">
+      <a class="logo" href="#" alt="logo" style="float: left;">
+        <span class="rs">RS</span>
+        <span class="card">card</span>
+      </a>
+      <nav class="menu" style="float: right;">
+        <ul class="clearfix">
+          <li>
+            <a href="#siteAbout">关于</a>
+          </li>
+          <li>
+            <a href="#siteSkills">技能</a>
+          </li>
+          <li>
+            <a href="#siteWorks">作品</a>
+            <ul class="submenu">
+              <li>作品1</li>
+              <li>作品2</li>
+              <li>作品3</li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">博客</a>
+            <ul class="submenu">
+              <li>博客1</li>
+              <li>博客2</li>
+              <li>博客3</li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">日历</a>
+          </li>
+          <li>
+            <a href="#">联系方式</a>
+          </li>
+          <li>
+            <a href="#">其他</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
   </div>
-  <div class="foot">这里是底线</div>
-  <script>
-    console.log('hello jirengu')
-  </script>
+  <div class="banner">
+    <div class="mask"></div>
+  </div>
+
 </body>
 
-</html>
