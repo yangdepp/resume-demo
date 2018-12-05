@@ -34,12 +34,22 @@ h1,h2,h3,h4,h5,h6{
   top: 0;
   left: 0;
   width: 100%;
+  color: #b7b7b7;
 }
 .topNavBar-inner {
   padding: 0 16px;
 }
 .topNavBar nav {
-  padding-top: 7px;
+  padding-top: 5px;
+}
+.sticky {
+  background: #fff;
+  color: #000;
+  transition: all 0.5s;
+  padding: 12px 0;
+  z-index: 1;
+  box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.5);
+  color: #3d4451;
 }
 .topNavBar nav > ul {
   list-style: none;
@@ -53,18 +63,34 @@ h1,h2,h3,h4,h5,h6{
 }
 .topNavBar nav > ul > li > a {
   font-size: 12px;
-  color: #b7b7b7;
   font-weight: bold;
   border-top: 3px solid transparent;
   border-bottom: 3px solid transparent;
   padding-top: 5px;
   padding-bottom: 5px;
   display: block;
+  position: relative;
 }
-.topNavBar nav > ul > li > a:hover {
-  border-bottom: 3px solid #e06567;
+.topNavBar nav > ul > li > a:hover::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: #e06567;
+  height: 3px;
+  animation: slider .3s;
 }
 
+@keyframes slider{
+  0% {
+    width: 0;
+  }
+  100%{
+    width: 100%;
+  }
+}
 .topNavBar .logo {
   font-size: 24px;
   font-family: 'Arial Black';
