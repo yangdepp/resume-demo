@@ -3,7 +3,8 @@
 
 <head>
   <title>个人简历</title>
-  <link rel="stylesheet" href="./a.css">
+  <link rel="stylesheet" href="./main.css">
+  <link rel="stylesheet" href="./loading.css">
   <script src="//at.alicdn.com/t/font_451045_32zbfqegtq3t0529.js"></script>
   <style type="text/css">
     .icon {
@@ -13,10 +14,31 @@
       fill: currentColor;
       overflow: hidden;
     }
+
+    .site-welcome {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #fff;
+      opacity: 0.8;
+      z-index: 1;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .site-welcome.active {
+      display: flex;
+    }
   </style>
 </head>
 
 <body>
+  <div id="siteWelcome" class="site-welcome active">
+    <div class="loading"></div>
+  </div>
   <div class="topNavBar">
     <div class="topNavBar-inner clearfix">
       <a class="logo" href="#" alt="logo" style="float: left;">
@@ -147,7 +169,7 @@
           React.js
         </h3>
         <div class="progressBar">
-          <div class="progress"  style="width: 50%"></div>
+          <div class="progress" style="width: 50%"></div>
         </div>
       </li>
       <li>
@@ -155,7 +177,7 @@
           Node.js
         </h3>
         <div class="progressBar">
-          <div class="progress"  style="width: 60%"></div>
+          <div class="progress" style="width: 60%"></div>
         </div>
       </li>
     </ol>
@@ -173,13 +195,13 @@
       </div>
     </nav>
     <script>
-      portfolio1.onclick= function(){
+      portfolio1.onclick = function () {
         portfolioBar.className = 'bar state-1'
       }
-      portfolio2.onclick= function(){
+      portfolio2.onclick = function () {
         portfolioBar.className = 'bar state-2'
       }
-      portfolio3.onclick= function(){
+      portfolio3.onclick = function () {
         portfolioBar.className = 'bar state-3'
       }
     </script>
@@ -198,6 +220,11 @@
     </div>
 
   </section>
+  <script>
+    setTimeout(() => {
+      siteWelcome.classList.remove('active')
+    }, 2000)
+  </script>
 </body>
 
 </html>
