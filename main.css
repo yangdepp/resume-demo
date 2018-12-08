@@ -73,7 +73,7 @@ h1,h2,h3,h4,h5,h6{
   display: block;
   position: relative;
 }
-.topNavBar nav > ul > li > a:hover::after {
+.topNavBar nav > ul > li.active > a::after {
   content: '';
   display: block;
   position: absolute;
@@ -101,17 +101,29 @@ h1,h2,h3,h4,h5,h6{
   top: 100%;
   background-color: #fff;
   color: #3d4451;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
 
-.topNavBar .submenu.active{
+.topNavBar li.active> .submenu{
   display: block;
+  animation: submenuSlide .3s;
+}
+@keyframes submenuSlide{
+  0% {
+    margin-right: 100%;
+  }
+  100% {
+    margin-right: 0%;
+  }
 }
 
 .topNavBar .submenu > li{
   white-space: nowrap;
   cursor: pointer;
   padding: 5px 10px;
+  font-size: 12px;
 }
+
 
 .topNavBar .logo {
   font-size: 24px;
