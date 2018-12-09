@@ -85,7 +85,7 @@
   <div class="banner">
     <div class="mask"></div>
   </div>
-  <main id="about">
+  <main id="about" data-x>
     <div class="userCard">
       <div class="pictureAndText clearfix">
         <div class="picture">
@@ -139,7 +139,7 @@
     </p>
 
   </main>
-  <section class="skills" id="skills">
+  <section class="skills" id="skills" data-x>
     <h2>技能</h2>
     <ol class="clearfix">
       <li>
@@ -192,7 +192,7 @@
       </li>
     </ol>
   </section>
-  <section class="portfolio" id="portfolio">
+  <section class="portfolio" id="portfolio" data-x>
     <h2>作品集</h2>
     <nav>
       <ol class="clearfix">
@@ -242,6 +242,23 @@
       } else {
         topNavBar.classList.remove('sticky');
       }
+
+      let specialTags = document.querySelectorAll('[data-x]')
+      let minIndex = 0;
+      for (let i = 0; i < specialTags.length; i++) {
+        if (Math.abs(specialTags[i].offsetTop - window.scrollY) < Math.abs(specialTags[minIndex].offsetTop - window.scrollY)) {
+          minIndex = i;
+        }
+      }
+
+      let id = specialTags[minIndex].id;
+      let a = document.querySelector('a[href="#'+ id + '"]');
+      let li = a.parentNode;
+      let brothersAndMe = li.parentNode.children;
+      for(let i =0;i<brothersAndMe.length; i++){
+        brothersAndMe[i].classList.remove('highlight')
+      }
+      li.classList.add('highlight')
     }
 
 
